@@ -36,7 +36,9 @@
     border-radius: 15px;
     margin: auto;
   }
-  
+  .cardAbout img {
+    border-radius: 15px;
+  }
   .cardAbout .share {
     margin-top: 1em;
     display: flex;
