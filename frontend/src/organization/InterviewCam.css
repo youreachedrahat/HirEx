@@ -1,0 +1,132 @@
+.Interview-Container {
+  height: auto;
+  width: 95%;
+  background-color: rgb(215, 206, 206);
+  display: flex;
+}
+
+.Interview-Container-Left {
+  height: 780px;
+  width: 50%;
+  background-color: rgb(43, 72, 98);
+  margin-top: 10px;
+}
+
+.Interview-Container-Right {
+  height: 790px;
+  width: 50%;
+  background-color: rgb(215, 206, 206);
+  margin-top: 10px;
+}
+.Left-Circle-1 {
+  height: 100%;
+  width: 400px;
+  background-color: beige;
+  border-radius: 0px 600px 600px 0px;
+  position: relative;
+  padding-top: 150px;
+}
+
+.Left-Circle-2 {
+  height: 100%;
+  width: 400px;
+  position: relative;
+  padding-top: 150px;
+}
+.Left-Candidate-Screen {
+  height: 300px;
+  width: 500px;
+  background-color: rgb(154, 134, 134);
+  margin-left: 150px;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.Candidate-Screen-WebCam {
+  height: 280px;
+  width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.Left-Candidate-Sound-Amplifier {
+  height: 200px;
+  width: 500px;
+  background-color: rgb(154, 134, 134);
+  margin-left: 150px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-radius: 5px;
+}
+
+.Sound-Amplifier-Design {
+  height: 100px;
+  width: 460px;
+  background-color: rgb(215, 206, 206);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.Sound-Amplifier-Button {
+  height: 50px;
+  width: 460px;
+  /* background-color: rgb(201, 100, 79); */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.Amplifier-Button-Start {
+  height: 50px;
+  width: audio;
+  background-color: beige;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: none;
+  outline: none;
+}
+
+.Amplifier-Button-Controls {
+  height: 50px;
+  width: 50px;
+  /* background-color: blue; */
+  border-radius: 25px;
+  border: 5px solid rgb(221, 196, 10);
+  background-size: cover;
+  overflow: hidden;
+}
+
+.Cross {
+  margin-top: 45%;
+  rotate: 45deg;
+  height: 5px;
+  width: 100%;
+  border: 5px solid rgb(221, 196, 10);
+  background-color: rgb(221, 196, 10);
+}
+
+.Control-1 {
+  background-image: url("../TestingAssets/VideoRecording.jpg");
+}
+
+.Control-2 {
+  background-image: url("../TestingAssets/AudioRecording.jpg");
+}
+
+.Control-3 {
+  background-image: url("../TestingAssets/repeat.jpg");
+}
+.In-Progress {
+  color: red;
+  padding-left: 15px;
+  padding-top: 15px;
+}

@@ -1,0 +1,29 @@
+
+.watermark1 {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    transform: rotate(-45deg);
+  }
+  .watermark2 {
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    transform: rotate(-45deg);
+  }
+  
+  .watermark3 {
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.3);
+    transform: rotate(-45deg);
+  }

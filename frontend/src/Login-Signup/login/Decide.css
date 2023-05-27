@@ -1,0 +1,65 @@
+.decide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 80vh;
+    /* padding: 3rem 0; */
+    flex-direction: column;
+    /* height: 100vh; */
+    gap: 1rem;
+    background-color: #f9f9f9;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    box-shadow: 0 0 10px rgb(91, 74, 74);
+}
+
+.decide h1 {
+    font-weight: bold;
+    color: rgb(57, 165, 212);
+    font-size: 2rem;
+}
+
+.loginButtons {
+    display: flex;
+    gap: 1rem;
+}
+.loginButtons Button {
+    display: flex;
+    flex-direction: column;
+}
+
+.Btn-Account-Type{
+    box-shadow: 0 0 5px rgb(189, 172, 172);
+
+}
+.pic {
+    width: 60px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: gray;
+    font-weight: 400;
+}
+
+.IMP-Logo{
+    /* background-color: red; */
+    height: 4rem;
+    width: 10rem;
+    background-image: url("./images/impologo.png");
+    background-size: cover;
+}
+.Heading-Type{
+    font-size: 1.6rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

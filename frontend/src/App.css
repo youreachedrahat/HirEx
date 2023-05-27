@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+:root {
+  font-size: 16px;
+  --sidebar: #281a63;
+  font-family: Poppins;
+  --main-color: #f3f6fd;
+  --message-box-hover: #fafcff;
+  --message-box-border: #e9ebf0;
+  --primary: #0091ff;
+  /* --dark: #061b28; */
+  --dark: #111;
+  --gray: #756388;
+  --light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--main-color);
+  /* margin-left: 7rem; */
+  transition: 0.5s ease-in;
+}
+
+.bodyMargin-withNavClose {
+  margin-left: 6rem;
+}
+
+.bodyMargin-withNavOpen {
+  margin-left: 250px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.marginLeftZero {
+  margin-left: -7rem;
+}
+
+.borderBottom {
+  border-bottom: solid 1.2px #e9ebf0 !important;
+}
+
+.flexRowReverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: start;
+  justify-content: flex-start;
+}
+
+.width30 {
+  max-width: 30% !important;
+}
+
+.width80 {
+  max-width: 80%;
+}
+
+.buttonBlack {
+  background-color: #111;
+}
+
+.buttonBlack:hover {
+  background-color: #c3cff4;
+}
+
+.card {
+  flex-shrink: 0;
+  background-color: #fff;
+  flex: 1;
+  border-radius: 30px;
+  position: relative;
+  overflow: auto;
+  transition: all 300ms cubic-bezier(0.19, 1, 0.56, 1);
+  border-top: 1px solid var(--message-box-border);
+  padding: 16px;
+  display: flex;
+}
+
+.invalid .MuiSnackbarContent-root {
+  Background-color: red !important;
+}
+
+.default .MuiSnackbarContent-root {
+  /* Background-color: ; */
+}
+
+.valid .MuiSnackbarContent-root {
+  Background-color: #4BB543 !important;
+}
