@@ -61,6 +61,7 @@ const Card = ({
           <button
             variant="contained"
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-4"
+            disabled
           >
             Expired
           </button>
@@ -110,14 +111,13 @@ const Card = ({
   const getReadMoreButton = () => {
     if (!expanded && jobDesc.length > 50) {
       return (
-        <Link to="/interview">
+        
           <button
             className="text-blue-500 font-bold hover:underline focus:outline-none"
             onClick={toggleExpansion}
           >
             Read More
           </button>
-        </Link>
       );
     }
     return null;
@@ -150,6 +150,8 @@ const Card = ({
               <span className="font-bold text-gray-900">Description:</span>{" "}
               &nbsp;
               {getDescription()}
+            {console.log("time",interviewTime)}
+
               {getReadMoreButton()}
             </p>
 
@@ -161,7 +163,7 @@ const Card = ({
             <p className="text-gray-700 text-base mb-2">
               <span className="font-bold text-gray-900">Interview Time:</span>{" "}
               &nbsp;
-              {formattedInterviewTime}
+              {interviewTime}
             </p>
             <p className="text-gray-700 text-base mb-2">
               <span className="font-bold text-gray-900">
@@ -177,6 +179,7 @@ const Card = ({
             {/* {startButton(validIntr)} */}
           </div>
           <div className="flex justify-center p-4">
+          <Link to="/interview">
             <Button
               variant="contained"
               onClick={() => {
@@ -185,6 +188,8 @@ const Card = ({
             >
               Give Test
             </Button>
+        </Link>
+
           </div>
         </div>
       )}

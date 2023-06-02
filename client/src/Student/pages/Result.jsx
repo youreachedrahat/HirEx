@@ -20,7 +20,7 @@ const Result = ({
   const [loading, setLoading] = useState(true);
 
   // -----------------------
-  let OriginalResult = JSON.parse(localStorage.getItem("AWSResult"));
+  let OriginalResult = JSON.parse(localStorage.getItem("AWSResult")); // UPDATE
   
   // -----------------------
 
