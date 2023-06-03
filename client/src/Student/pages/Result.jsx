@@ -21,7 +21,7 @@ const Result = ({
 
   // -----------------------
   let OriginalResult = JSON.parse(localStorage.getItem("AWSResult")); // UPDATE
-  
+  console.log(OriginalResult)
   // -----------------------
 
   console.log(
