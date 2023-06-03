@@ -4,6 +4,7 @@ import Header from "../organization/Header";
 import Footer from "../organization/Footer";
 import RahatPic from "./rahat.jpg"
 import HrushiPic from "./hrushi.jpg"
+import FaizanPic from "./faizan.jpg"
 function contact() {
   const rahat = () => {
     window.open('https://rahatsayyed.netlify.app/', '_blank');
@@ -201,7 +202,9 @@ function contact() {
         </div>
 
         <div class="cardAbout">
-          <div class="img"></div>
+        <div class="img">
+            <img src={FaizanPic}></img>
+          </div>
           <span>Faizan Shaikh</span>
           <p class="info">
           I specialize in analyzing complex datasets, building predictive models, and applying machine learning algorithms to extract valuable insights.

@@ -37,7 +37,7 @@ function Results({ UserDataData }) {
   const BASEURL = process.env.REACT_APP_SAMPLE;
   const cookies = new Cookies();
   const ViewInterviewResults = async () => {
-    console.log("wewewe");
+    console.log("wewewe", resultList);
     const Temp = await axios
       .post(`${BASEURL}/FindResult`, {
         Res_Company_Name: tempUserData.Name,
