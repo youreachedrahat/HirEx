@@ -3,6 +3,7 @@ import "./Contact.css";
 import Header from "../organization/Header";
 import Footer from "../organization/Footer";
 import RahatPic from "./rahat.jpg"
+import HrushiPic from "./hrushi.jpg"
 function contact() {
   const rahat = () => {
     window.open('https://rahatsayyed.netlify.app/', '_blank');
@@ -80,7 +81,9 @@ function contact() {
         </div>
 
         <div class="cardAbout">
-          <div class="img"></div>
+        <div class="img">
+            <img src={HrushiPic}></img>
+          </div>
           <span>Hrushikesh Ambike</span>
           <p class="info">
             I’m Hrushikesh, and I like working on MERN Stack projects
@@ -140,7 +143,7 @@ function contact() {
 
         <div class="cardAbout">
           <div class="img"></div>
-          <span>About Me</span>
+          <span>Akash Malekar</span>
           <p class="info">
           I specialize in developing scalable backend systems and designing efficient APIs.
           </p>

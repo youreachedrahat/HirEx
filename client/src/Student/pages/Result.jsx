@@ -4,6 +4,38 @@ import Chart from "chart.js/auto";
 import { Pie, Line } from "react-chartjs-2";
 import Footer from "../../organization/Footer";
 
+let OriginalResult = JSON.parse(localStorage.getItem("AWSResult")); // UPDATE
+
+const initialState = {
+  CALM: 0,
+  CONFUSED: 0,
+  SURPRISED: 0,
+  FEAR: 0,
+  SAD: 0,
+  DISGUSTED: 0,
+  ANGRY: 0,
+  HAPPY: 0,
+};
+
+const calculateAverage = (emotions) => {
+  const emotionCounts = {};
+  const emotionSums = {};
+  emotions.forEach((emotion) => {
+    const { Type, Confidence } = emotion;
+    emotionCounts[Type] = (emotionCounts[Type] || 0) + 1;
+    emotionSums[Type] = (emotionSums[Type] || 0) + Confidence;
+  });
+
+  const averageEmotions = {};
+  Object.keys(emotionCounts).forEach((emotion) => {
+    averageEmotions[emotion] = emotionSums[emotion] / emotionCounts[emotion];
+  });
+
+  return averageEmotions;
+};
+
+
+
 const Result = ({
   resultlist,
   overallpercent,
@@ -20,8 +52,34 @@ const Result = ({
   const [loading, setLoading] = useState(true);
 
   // -----------------------
-  let OriginalResult = JSON.parse(localStorage.getItem("AWSResult")); // UPDATE
-  
+  const [emotionAverages, setEmotionAverages] = useState(initialState);
+
+  useEffect(() => {
+    const emotions = OriginalResult[0].Emotions;
+    const averageEmotions = calculateAverage(emotions);
+    setEmotionAverages(averageEmotions);
+  }, []);
+
+  // Assuming OriginalResult only contains a single object
+  const emotions = OriginalResult[0].Emotions;
+  const averageEmotions = calculateAverage(emotions);
+
+  // Update state with the average emotion values
+  useState(() => {
+    setEmotionAverages(averageEmotions);
+  }, []);
+
+  // Destructure the state variables
+  const {
+    CALM,
+    CONFUSED,
+    SURPRISED,
+    FEAR,
+    SAD,
+    DISGUSTED,
+    ANGRY,
+    HAPPY,
+  } = emotionAverages;
   // -----------------------
 
   console.log(
@@ -171,11 +229,11 @@ const Result = ({
   };
 
   const emodata = {
-    labels: ["Joy", "Love", "Surprise", "Anger", "Sadness", "Fear"],
+    labels: ["CALM", "CONFUSED", "SURPRISED", "FEAR", "SAD", "DISGUSTED", "ANGRY", "HAPPY"],
     datasets: [
       {
         label: "Emotions",
-        data: Object.values(getRandomValues()),
+        data: Object.values(emotionAverages),
         fill: false,
         borderColor: "rgba(75,192,192,1)",
         tension: 0.1,

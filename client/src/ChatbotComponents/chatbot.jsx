@@ -26,7 +26,7 @@ function ChatBot({ setDisplay }) {
 
   const { Configuration, OpenAIApi } = require("openai");
   const configuration = new Configuration({
-    // apiKey: "sk-rZK41ggFxZjrZGKaAIOmT3BlbkFJkOIYwTIlIP4SxqotQsl",
+    apiKey: "sk-rZK41ggFxZjrZGKaAIOmT3BlbkFJkOIYwTIlIP4SxqotQsl",
   });
   const openai = new OpenAIApi(configuration);
   const getOpenAIResponse = () => {
