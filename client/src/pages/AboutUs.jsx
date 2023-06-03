@@ -6,11 +6,11 @@ import Logo from "../images/Company-Logo.jpg";
 
 function AboutUs({ setDisplay }) {
   return (
-    <div className="">
+    <div className="flex flex-col min-h-screen">
       <Header setDisplay={setDisplay} />
-      <div className="container ">
-        <div className="flex flex-wrap justify-between items-center text-center">
-          <div className="w-full ">
+      <div className="flex-grow container mx-auto">
+        <div className="flex flex-wrap items-center text-center">
+          <div className="w-full md:w-1/2 lg:w-2/3 mb-8 md:mb-0 md:pr-10">
             <h1 className="text-5xl font-bold text-center pb-5">About Us</h1>
             <p className="text-gray-600 leading-relaxed text-lg mb-8">
               Recruiting the right candidate for a job role is a crucial and
@@ -41,7 +41,7 @@ function AboutUs({ setDisplay }) {
               process, save time and resources, and select the best candidates
               for the job.
             </p>
-            <div className="flex items-center">
+            <div className="flex items-center justify-center md:justify-start">
               <FaTwitter className="text-gray-600 mr-4" />
               <FaFacebook className="text-gray-600 mr-4" />
               <FaInstagram className="text-gray-600" />

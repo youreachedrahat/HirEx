@@ -1,74 +1,113 @@
 @import '../App.css';
 
 .cardAbout {
-    width: 17em;
-    height: 22.5em;
-    background: #171717;
-    transition: 1s ease-in-out;
-    clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cardAbout span {
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    display: block;
-    font-size: 1em;
-  }
-  
-  .cardAbout .info {
-    font-weight: 400;
-    color: white;
-    display: block;
-    text-align: center;
-    font-size: 0.72em;
-    margin: 1em;
+  width: 17em;
+  height: 22.5em;
+  background: #171717;
+  transition: 1s ease-in-out;
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.cardAbout:last-child {
+  margin-right: 0;
+}
+
+
+.cardAbout span {
+  font-weight: bold;
+  color: white;
+  display: block;
+  font-size: 1em;
+}
+
+.cardAbout .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  font-size: 0.72em;
+  margin: 1em;
+}
+
+.cardAbout .img {
+  width: 4.8em;
+  height: 4.8em;
+  background: white;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.cardAbout img {
+  border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardAbout .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.cardAbout a {
+  color: white;
+  transition: .4s ease-in-out;
+}
+
+.cardAbout a:hover {
+  color: red;
+}
+
+.cardAbout button {
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: .4s ease-in-out;
+}
+
+.cardAbout button:hover {
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .cardAbout {
+    clip-path: none;
+    margin-right: 10px;
   }
   
   .cardAbout .img {
-    width: 4.8em;
-    height: 4.8em;
-    background: white;
-    border-radius: 15px;
-    margin: auto;
+    width: 4em;
+    height: 4em;
   }
-  .cardAbout img {
-    border-radius: 15px;
+  
+  .cardAbout .info {
+    font-size: 0.9em;
   }
+  
   .cardAbout .share {
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-  }
-  
-  .cardAbout a {
-    color: white;
-    transition: .4s ease-in-out;
-  }
-  
-  .cardAbout a:hover {
-    color: red;
+    margin-top: 0.5em;
   }
   
   .cardAbout button {
-    padding: 0.8em 1.7em;
-    display: block;
-    margin: auto;
-    border-radius: 25px;
-    border: none;
-    font-weight: bold;
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    transition: .4s ease-in-out;
+    padding: 0.6em 1.3em;
+    font-size: 0.9em;
   }
-  
-  .cardAbout button:hover {
-    background: red;
-    color: white;
-    cursor: pointer;
-  }
+}

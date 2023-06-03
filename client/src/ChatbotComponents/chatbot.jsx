@@ -7,7 +7,7 @@ import Footer from "../organization/Footer";
 function ChatBot({ setDisplay }) {
   const [chat, setChat] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
-  const [botTyping, setbotTyping] = useState(false);
+  const [botTyping, setBotTyping] = useState(false);
   let arr = [];
 
   const handleSubmit = (evt) => {
@@ -17,10 +17,10 @@ function ChatBot({ setDisplay }) {
     console.log("Hrushi  at submit");
     if (inputMessage !== "") {
       setChat((chat) => [...chat, request_temp]);
-      setbotTyping(true);
+      setBotTyping(true);
       setInputMessage("");
     } else {
-      window.alert("Please enter valid message");
+      window.alert("Please enter a valid message");
     }
   };
 
@@ -29,7 +29,7 @@ function ChatBot({ setDisplay }) {
     // apiKey: "sk-rZK41ggFxZjrZGKaAIOmT3BlbkFJkOIYwTIlIP4SxqotQsl",
   });
   const openai = new OpenAIApi(configuration);
-  const getOpenAIRespoense = () => {
+  const getOpenAIResponse = () => {
     arr.push("USER:" + inputMessage);
     console.log("Hrushi login array" + arr.join());
     openai
@@ -52,7 +52,7 @@ function ChatBot({ setDisplay }) {
               recipient_id: 1,
               msg: item.text,
             };
-            setbotTyping(false);
+            setBotTyping(false);
 
             setChat((chat) => [...chat, response_temp]);
             return <></>;
@@ -62,44 +62,37 @@ function ChatBot({ setDisplay }) {
   };
 
   return (
-    <div className="container mx-auto  ">
+    <div className="mx-auto">
       <Header setDisplay={setDisplay} />
       <div className="flex justify-center mt-5 mb-60">
-        <div className="w-full max-w-md rounded-lg shadow-lg">
+        <div className="w-full max-w-md rounded-lg shadow-lg ">
           <div className="bg-blue-600 rounded-t-lg px-4 py-3">
+            <h1 className="text-white font-bold text-lg">Smart Hire Chat-Bot</h1>
             <h1 className="text-white font-bold text-lg">
-              Smart Hire Chat-Bot
+              Find Answers to all your questions...
             </h1>
-            <h1 className="text-white font-bold text-lg">
-              Find Answers to all your questions. . . .
-            </h1>
-            {botTyping ? <h6>Bot Typing....</h6> : null}
+            {botTyping && <h6>Bot Typing....</h6>}
           </div>
           <div className="px-4 py-2 bg-gray-100 h-96">
             {chat.map((user, key) => {
-              if (user.sender === "bot") {
-                arr.push("JAX:" + user.msg);
-              }
-              if (user.sender === "user") {
-                arr[key] = user.msg;
-                arr.push("\n USER:" + user.msg);
-              }
+              const isBot = user.sender === "bot";
               return (
-                <div key={key} className=" p-6 ">
-                  {user.sender === "bot" ? (
-                    <div className="flex items-start">
+                <div
+                  key={key}
+                  className={`p-6 ${
+                    isBot ? "flex items-start" : "flex items-end justify-end"
+                  }`}
+                >
+                  {isBot ? (
+                    <>
                       <BiBot className="text-blue-600 mr-2 mt-1" />
-                      <h5 className="bg-white rounded-lg px-3 py-2">
-                        <div>{user.msg}</div>
-                      </h5>
-                    </div>
+                      <h5 className="bg-white rounded-lg px-3 py-2">{user.msg}</h5>
+                    </>
                   ) : (
-                    <div className="flex items-end justify-end">
-                      <h5 className="bg-blue-600 text-white rounded-lg px-3 py-2">
-                        {user.msg}
-                      </h5>
+                    <>
+                      <h5 className="bg-blue-600 text-white rounded-lg px-3 py-2">{user.msg}</h5>
                       <BiUser className="text-gray-600 ml-2 mt-1" />
-                    </div>
+                    </>
                   )}
                 </div>
               );
@@ -109,14 +102,14 @@ function ChatBot({ setDisplay }) {
             <form onSubmit={handleSubmit} className="flex items-center">
               <input
                 onChange={(e) => setInputMessage(e.target.value)}
-                placeholder="Have a doubt Enter here.."
+                placeholder="Have a doubt? Enter here..."
                 value={inputMessage}
                 type="text"
                 className="flex-1 px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-600 mr-2"
               />
               <button
                 type="submit"
-                onClick={getOpenAIRespoense}
+                onClick={getOpenAIResponse}
                 className="flex-shrink-0 bg-blue-600 text-white py-2 px-3 rounded-lg"
               >
                 <IoMdSend className="text-white" />

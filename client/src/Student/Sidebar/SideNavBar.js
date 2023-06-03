@@ -21,6 +21,11 @@ const SideNavBar = (props) => {
 		document.body.style.marginLeft = "90px";
 
 	};
+	function handleLogout() {
+		window.location.reload();
+		document.body.style.marginLeft = "0px";
+		setIsLoggedIn(false);
+	  }
 	return (
 		<>
 
@@ -90,10 +95,7 @@ const SideNavBar = (props) => {
 						<Link
 							to="/"
 							className="logout-button"
-							onClick={() => {
-								closeSidebar();
-								setIsLoggedIn(false);
-							}}
+							onClick={handleLogout}
 						>
 							<span className="logout-icon">
 								{<FiIcons.FiLogOut />}

@@ -10,9 +10,13 @@ function contact() {
   return (
     
     <>
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow-0">
       <Header />
+      </div>
+        
       <h1 className="text-5xl font-bold text-center pt-5">Meet the Dev's</h1>
-      <div className=" flex-grow grid grid-cols-4 mx-auto width80 py-20">
+      <div className=" flex-grow flex-shrink-0 flex flex-wrap justify-center py-10">
         <div class="cardAbout">
           <div class="img">
             <img src={RahatPic}></img>
@@ -138,10 +142,7 @@ function contact() {
           <div class="img"></div>
           <span>About Me</span>
           <p class="info">
-            I’m Walter, a multidisciplinary designer who focuses on telling my
-            clients’ stories visually, through enjoyable and meaningful
-            experiences. I specialize in responsive websites and functional user
-            interfaces.
+          I specialize in developing scalable backend systems and designing efficient APIs.
           </p>
           <div class="share">
             <a href="">
@@ -198,12 +199,9 @@ function contact() {
 
         <div class="cardAbout">
           <div class="img"></div>
-          <span>About Me</span>
+          <span>Faizan Shaikh</span>
           <p class="info">
-            I’m Walter, a multidisciplinary designer who focuses on telling my
-            clients’ stories visually, through enjoyable and meaningful
-            experiences. I specialize in responsive websites and functional user
-            interfaces.
+          I specialize in analyzing complex datasets, building predictive models, and applying machine learning algorithms to extract valuable insights.
           </p>
           <div class="share">
             <a href="">
@@ -258,9 +256,10 @@ function contact() {
           <button>Resume</button>
         </div>
       </div>
-      <div className="absolute inset-x-0 bottom-0">
+      <div className="flex-grow-0">
         <Footer />
       </div>
+    </div>
     </>
   );
 }
