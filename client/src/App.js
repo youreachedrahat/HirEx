@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Replace 2000 with the actual loading time for your data or resources
+    }, 1400); // Replace 2000 with the actual loading time for your data or resources
   }, []);
 
   return (

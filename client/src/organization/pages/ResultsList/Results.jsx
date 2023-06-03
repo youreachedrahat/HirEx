@@ -55,19 +55,7 @@ function Results({ UserDataData }) {
   };
 
   const classes = useStyles();
-  const [students, setStudents] = useState([
-    {
-      name: "John Smith",
-      email: "john.smith@example.com",
-      score: 78.5,
-    },
-    {
-      name: "Jane Doe",
-      email: "jane.doe@example.com",
-      score: 92.0,
-    },
-    // add more students here
-  ]);
+ 
 
   useEffect(() => {
     setTemUserData(UserDataData);

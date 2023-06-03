@@ -10,7 +10,7 @@ function AboutUs({ setDisplay }) {
       <Header setDisplay={setDisplay} />
       <div className="container ">
         <div className="flex flex-wrap justify-between items-center text-center">
-          <div className="w-full md:w-1/2 lg:w-2/3 mb-8 md:mb-0">
+          <div className="w-full ">
             <h1 className="text-5xl font-bold text-center pb-5">About Us</h1>
             <p className="text-gray-600 leading-relaxed text-lg mb-8">
               Recruiting the right candidate for a job role is a crucial and
