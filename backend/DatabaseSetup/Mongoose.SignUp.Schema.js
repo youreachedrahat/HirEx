@@ -1,9 +1,16 @@
 const mongoose = require("mongoose");
-const { MONGOOSE_CONNECTION } = process.env;
+const dotenv = require("dotenv");
+
 const bcrypt=require("bcryptjs");
+
+dotenv.config({
+  path: "./.env",
+});
+const { MONGOOSE_CONNECTION } = process.env;
+
 mongoose.set("strictQuery", false);
 mongoose.connect(
-  "mongodb+srv://AkashMalekar:akash123@cluster0.raazx.mongodb.net/?retryWrites=true&w=majority",
+  MONGOOSE_CONNECTION,
   {
     useNewUrlParser: true,
   }
